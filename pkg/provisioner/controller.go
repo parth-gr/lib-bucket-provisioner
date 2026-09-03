@@ -449,7 +449,7 @@ func (c *obcController) handleDeleteClaim(key string, obc *v1alpha1.ObjectBucket
 
 	// call Delete or Revoke and then delete generated k8s resources
 	// Note: if Delete or Revoke return err then we do not try to delete resources
-	ob, err := updateObjectBucketPhase(c.libClientset, ob, v1alpha1.ObjectBucketClaimStatusPhaseReleased)
+	ob, err := updateObjectBucketPhase(c.libClientset, ob, v1alpha1.ObjectBucketStatusPhaseReleased)
 	if err != nil {
 		return err
 	}
